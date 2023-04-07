@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Camion;
 use App\Models\camionModel;
+use App\Models\Transporte;
 use App\Models\transporteModel;
 use Illuminate\Database\Seeder;
 
@@ -14,20 +16,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $transporte = new transporteModel();
-        $transporte->codigo='abc12345';
-        $transporte->nombre='proveedor3';
-        $transporte->razon_social='Entre Rios';
-        $transporte->save();
+        /*
+        $transportes = new Transporte();
+        //$transportes->id='123ABC';
+        $transportes->nombre='Compañía 1';
+        $transportes->razon_social='Sociedad Anonima';
+        $transportes->save();
 
-        $camion = new camionModel();
-        $camion->id_placa='1';
-        $camion->placa_camion='abc123';
-        $camion->marca='Foton';
-        $camion->color='azul';
-        $camion->modelo='2023-03-03';
-        $camion->capacidad_toneladas='2';
-        $camion->transporte_codigo='abc12345';
-        $camion->save();
+        $camions = new Camion();
+        //$camions->id='1';
+        $camions->placa_camion='ABC123';
+        $camions->marca='Toyota';
+        $camions->color='Blanco';
+        $camions->modelo='2023';
+        $camions->capacidad_toneladas='2';
+        $camions->transporte_id='1';
+        $camions->save();
+        */
+        Transporte::factory(100)->create();
+        Camion::factory(100)->create();
     }
 }

@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('placa_camion', 6);
             $table->string('marca', 45);
             $table->string('color',25);
-            $table->date('modelo');
+            $table->year('modelo');
             $table->integer('capacidad_toneladas');
             //$table->string('transporte_id',45);
             $table->unsignedBigInteger('transporte_id')->nullable();
-            $table->foreign('transporte_id')->references('id')->on('transporte')->onDelete('no action');
+            $table->foreign('transporte_id')->references('id')->on('transportes')->onDelete('no action');
             $table->timestamps();
         });
     }
