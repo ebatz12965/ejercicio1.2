@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/transportes',[\App\Http\Controllers\TransporteController::class,'index'])->name('transportes');
+
+Route::get('/camiones',[\App\Http\Controllers\CamionController::class,'index'])->name('camions');
